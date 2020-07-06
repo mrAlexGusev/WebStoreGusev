@@ -9,7 +9,7 @@ namespace WebStoreGusev.Controllers
 {
     public class HomeController : Controller
     {
-        List<EmployeeViewModel> employees;
+        private readonly List<EmployeeViewModel> employees;
 
         public HomeController()
         {
