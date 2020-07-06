@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -12,6 +13,12 @@ namespace WebStoreGusev
 {
     public class Startup
     {
+        private readonly IConfiguration configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
  
         public void ConfigureServices(IServiceCollection services)
         {
@@ -27,6 +34,23 @@ namespace WebStoreGusev
 
             app.UseRouting();
 
+            #region Работа с файлом конфигурации
+
+            //// Работа с собственной строкой конфигурации
+            //var helloMsg = configuration["CustomHelloWorld"];
+            //// Работа с составной строкой конфигурации
+            //helloMsg = configuration["Logging:LogLevel:Default"];
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapGet("/", async context =>
+            //    {
+            //        await context.Response.WriteAsync(helloMsg);
+            //    });
+            //});
+
+            #endregion
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
