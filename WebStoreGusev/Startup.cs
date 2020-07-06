@@ -22,9 +22,11 @@ namespace WebStoreGusev
  
         public void ConfigureServices(IServiceCollection services)
         {
+            // подключаем MVC
+            services.AddMvc();
         }
 
-        
+        // конвеер выполнения запросов
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -53,10 +55,20 @@ namespace WebStoreGusev
             
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                // шаблон пути MVC
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                
+                #region По умолчанию
+
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
+
+                #endregion
+
             });
         }
     }
