@@ -7,11 +7,11 @@ using WebStoreGusev.Models;
 
 namespace WebStoreGusev.Controllers
 {
-    public class HomeController : Controller
+    public class EmployeeController : Controller
     {
         private readonly List<EmployeeViewModel> employees;
 
-        public HomeController()
+        public EmployeeController()
         {
             employees = new List<EmployeeViewModel>
             {
