@@ -68,5 +68,10 @@ namespace WebStoreGusev.Controllers
             //return Content("Hello from home controller");
             return View(employees);
         }
+
+        public IActionResult Details(int id)
+        {
+            return View(employees.FirstOrDefault(x => x.Id == id));
+        }
     }
 }
