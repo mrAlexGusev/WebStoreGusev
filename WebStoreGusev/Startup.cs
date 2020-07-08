@@ -34,6 +34,9 @@ namespace WebStoreGusev
                 app.UseDeveloperExceptionPage();
             }
 
+            // исползование статических файлов
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             #region Работа с файлом конфигурации
