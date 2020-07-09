@@ -1,13 +1,9 @@
 ﻿
 @{
-    ViewData["Title"] = "Shop";
+    ViewData["Title"] = "Каталог";
 }
 
-<section id="advertisement">
-    <div class="container">
-        <img src="images/shop/advertisement.jpg" alt="" />
-    </div>
-</section>
+@await Html.PartialAsync("Partial/_Advertisement")
 
 <section>
     <div class="container">
