@@ -46,7 +46,10 @@ namespace WebStoreGusev
 
             #region Добавляем разрешение зависимости
 
+            // время жизни сервиса - время работы приложения 
             services.AddSingleton<IEmployeesServices, InMemoryEmployeeService>();
+            // время жизни сервиса - время одного запроса
+            //services.AddScoped<IEmployeesServices, InMemoryEmployeeService>();
 
             #endregion
         }

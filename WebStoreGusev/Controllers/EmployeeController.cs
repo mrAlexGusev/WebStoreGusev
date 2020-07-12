@@ -32,5 +32,48 @@ namespace WebStoreGusev.Controllers
         {
             return View(employeesServices.GetById(id));
         }
+
+        // /users/edit/{id}
+        [Route("edit/{id?}")]
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if (!id.HasValue) return View(new EmployeeViewModel());
+
+            var model = employeesServices.GetById(id.Value);
+            if (model == null) return NotFound();
+
+            return View(model);
+        }
+
+        [Route("edit/{id?}")]
+        [HttpPost]
+        public IActionResult Edit(EmployeeViewModel model)
+        {
+            // если есть Id, то редактируем модель
+            if (model.Id > 0)
+            {
+                var dbItem = employeesServices.GetById(model.Id);
+
+                if (ReferenceEquals(dbItem, null))
+                    return NotFound();
+
+                dbItem.FirstName = model.FirstName;
+                dbItem.LastName = model.LastName;
+                dbItem.Patronymic = model.Patronymic;
+                dbItem.Age = model.Age;
+                dbItem.Position = model.Position;
+            }
+            // иначе добавляем модель в список
+            else
+            {
+                employeesServices.AddNew(model);
+            }
+
+            // станет актуальным после подключения БД
+            employeesServices.Commit();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
