@@ -27,12 +27,26 @@ namespace WebStoreGusev.Controllers
         }
 
         // /users/{id}
+        /// <summary>
+        /// Информация о сотруднике.
+        /// </summary>
+        /// <param name="id"> ID сотрудника. </param>
+        /// <returns></returns>
         [Route("{id}")]
         public IActionResult Details(int id)
         {
-            return View(employeesServices.GetById(id));
+            var employee = employeesServices.GetById(id);
+
+            if (ReferenceEquals(employee, null)) return NotFound();
+
+            return View(employee);
         }
 
+        /// <summary>
+        /// Добавление или редактирование сотрудника.
+        /// </summary>
+        /// <param name="id"> ID сотрудника. </param>
+        /// <returns></returns>
         // /users/edit/{id}
         [Route("edit/{id?}")]
         [HttpGet]
@@ -73,6 +87,19 @@ namespace WebStoreGusev.Controllers
             // станет актуальным после подключения БД
             employeesServices.Commit();
 
+            return RedirectToAction(nameof(Index));
+        }
+
+        /// <summary>
+        /// Удаление сотрудника.
+        /// </summary>
+        /// <param name="id"> ID сотрудника. </param>
+        /// <returns></returns>
+        // /users/delete/{id}
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            employeesServices.Delete(id);
             return RedirectToAction(nameof(Index));
         }
     }
