@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebStoreGusev.Infrastructure;
+using WebStoreGusev.Infrastructure.Interfaces;
+using WebStoreGusev.Infrastructure.Services;
 
 namespace WebStoreGusev
 {
@@ -23,8 +25,30 @@ namespace WebStoreGusev
  
         public void ConfigureServices(IServiceCollection services)
         {
-            // подключаем MVC
+            #region Подключение MVC к проекту
+
             services.AddMvc();
+
+            #endregion
+            
+            #region Подключение action-фильтра ко всем контроллерам
+
+            //services.AddMvc(options =>
+            //{
+            //    // 1
+            //    options.Filters.Add(typeof(SimpleActionFilter));
+
+            //    // 2 
+            //    options.Filters.Add(new SimpleActionFilter());
+            //});
+
+            #endregion
+
+            #region Добавляем разрешение зависимости
+
+            services.AddSingleton<IEmployeesServices, InMemoryEmployeeService>();
+
+            #endregion
         }
 
         // конвеер выполнения запросов
