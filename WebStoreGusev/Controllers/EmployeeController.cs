@@ -7,6 +7,7 @@ using WebStoreGusev.Models;
 
 namespace WebStoreGusev.Controllers
 {
+    [Route("users")]
     public class EmployeeController : Controller
     {
         private readonly List<EmployeeViewModel> employees;
@@ -63,12 +64,16 @@ namespace WebStoreGusev.Controllers
             };
         }
 
+        // /users/all
+        [Route("all")]
         public IActionResult Index()
         {
             //return Content("Hello from home controller");
             return View(employees);
         }
 
+        // /users/{id}
+        [Route("{id}")]
         public IActionResult Details(int id)
         {
             return View(employees.FirstOrDefault(x => x.Id == id));

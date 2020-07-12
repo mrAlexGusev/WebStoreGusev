@@ -65,7 +65,9 @@ namespace WebStoreGusev
             //});
 
             #endregion
-            
+
+            // app.UseMvcWithDefaultRoute();
+
             app.UseEndpoints(endpoints =>
             {
                 // шаблон пути MVC
