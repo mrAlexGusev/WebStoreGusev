@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Models;
 
@@ -64,6 +60,20 @@ namespace WebStoreGusev.Controllers
         [HttpPost]
         public IActionResult Edit(EmployeeViewModel model)
         {
+            #region Реализация валидации через логику
+
+            if (model.Age < 18 || model.Age > 100)
+            {
+                ModelState.AddModelError("Age", "Ошибка возраста!");
+            }
+
+            #endregion
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             // если есть Id, то редактируем модель
             if (model.Id > 0)
             {
