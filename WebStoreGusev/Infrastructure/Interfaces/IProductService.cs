@@ -10,21 +10,21 @@ namespace WebStoreGusev.Infrastructure.Interfaces
     public interface IProductService
     {
         /// <summary>
-        /// Получение категорий товаров.
+        /// Получение списка категорий товаров.
         /// </summary>
         /// <returns></returns>
         IEnumerable<Category> GetCategories();
 
         /// <summary>
-        /// Получение брендов товаров.
+        /// Получение списка брендов товаров.
         /// </summary>
         /// <returns></returns>
         IEnumerable<Brand> GetBrands();
 
         /// <summary>
-        /// Получение товаров.
+        /// Получение списка товаров.
         /// </summary>
-        /// <param name="filter"></param>
+        /// <param name="filter"> Фильтр товаров. </param>
         /// <returns></returns>
         IEnumerable<Product> GetProducts(ProductFilter filter);
     }

@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace WebStoreGusev.Domain
 {
     /// <summary>
-    /// Класс фильтрации товаров.
+    /// Класс для фильтрации товаров.
     /// </summary>
     public class ProductFilter
     {
+        /// <summary>
+        /// Категория, к которой принадлежит продукт.
+        /// </summary>
         public int? CategoryId { get; set; }
+
+        /// <summary>
+        /// Бренд протукта (если имеется).
+        /// </summary>
         public int? BrandId { get; set; }
     }
 }
