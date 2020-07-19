@@ -6,10 +6,13 @@ using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
 namespace WebStoreGusev.Domain.Entities
 {
+    /// <summary>
+    /// Категория товара.
+    /// </summary>
     public class Category : NamedEntity, IOrderedEntity
     {
         /// <summary>
-        /// Родительская секция (при наличии)
+        /// Родительская секция (при наличии).
         /// </summary>
         public int? ParentId { get; set; }
 

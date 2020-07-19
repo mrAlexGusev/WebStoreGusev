@@ -4,6 +4,9 @@ using WebStoreGusev.Models;
 
 namespace WebStoreGusev.Controllers
 {
+    /// <summary>
+    /// Тестовый контроллер. Работа с сотрудниками.
+    /// </summary>
     [Route("users")]
     public class EmployeeController : Controller
     {        
@@ -39,7 +42,7 @@ namespace WebStoreGusev.Controllers
         }
 
         /// <summary>
-        /// Добавление или редактирование сотрудника.
+        /// Добавление или редактирование сотрудника. GET-запрос.
         /// </summary>
         /// <param name="id"> ID сотрудника. </param>
         /// <returns></returns>
@@ -56,11 +59,17 @@ namespace WebStoreGusev.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Добавление или редактирование сотрудника. POST-запрос.
+        /// </summary>
+        /// <param name="id"> ID сотрудника. </param>
+        /// <returns></returns>
+        // /users/edit/{id}
         [Route("edit/{id?}")]
         [HttpPost]
         public IActionResult Edit(EmployeeViewModel model)
         {
-            #region Реализация валидации через логику
+            #region Реализация собственной валидации
 
             if (model.Age < 18 || model.Age > 100)
             {

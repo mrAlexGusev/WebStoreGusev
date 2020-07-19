@@ -8,6 +8,9 @@ using WebStoreGusev.Models;
 
 namespace WebStoreGusev.ViewComponents
 {
+    /// <summary>
+    /// Компонент представления отображающий категории товаров.
+    /// </summary>
     [ViewComponent(Name = "Categories")]
     public class CategoriesViewComponent : ViewComponent
     {
@@ -24,6 +27,10 @@ namespace WebStoreGusev.ViewComponents
             return View(categories);
         }
 
+        /// <summary>
+        /// Получение категорий товаров.
+        /// </summary>
+        /// <returns></returns>
         private List<CategoryViewModel> GetCategories()
         {
             var categories = productService.GetCategories();

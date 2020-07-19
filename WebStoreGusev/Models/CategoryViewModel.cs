@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
 namespace WebStoreGusev.Models
 {
+    /// <summary>
+    /// Модель представления каталога товаров.
+    /// </summary>
     public class CategoryViewModel : INamedEntity, IOrderedEntity
     {
         public CategoryViewModel()

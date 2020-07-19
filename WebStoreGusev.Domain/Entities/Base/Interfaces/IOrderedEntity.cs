@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace WebStoreGusev.Domain.Entities.Base.Interfaces
 {
+    /// <summary>
+    /// Сущность с Порядком.
+    /// </summary>
     public interface IOrderedEntity
     {
+        /// <summary>
+        /// Порядок. 
+        /// </summary>
         int Order { get; set; }
     }
 }
