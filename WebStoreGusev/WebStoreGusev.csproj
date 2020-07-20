@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebStoreGusev.DAL\WebStoreGusev.DAL.csproj" />
     <ProjectReference Include="..\WebStoreGusev.Domain\WebStoreGusev.Domain.csproj" />
   </ItemGroup>
 

@@ -11,7 +11,7 @@ namespace WebStoreGusev.ViewComponents
     /// <summary>
     /// Компонент представления отображающий категории товаров.
     /// </summary>
-    [ViewComponent(Name = "Categories")]
+    //[ViewComponent(Name = "Categories")]
     public class CategoriesViewComponent : ViewComponent
     {
         private readonly IProductService productService;

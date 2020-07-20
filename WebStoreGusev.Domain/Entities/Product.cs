@@ -1,4 +1,5 @@
-﻿using WebStoreGusev.Domain.Entities.Base;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using WebStoreGusev.Domain.Entities.Base;
 using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
 namespace WebStoreGusev.Domain.Entities
@@ -6,6 +7,7 @@ namespace WebStoreGusev.Domain.Entities
     /// <summary>
     /// Продукт.
     /// </summary>
+    [Table("Products")]
     public class Product : NamedEntity, IOrderedEntity
     {
         public int Order { get; set; }
@@ -29,5 +31,11 @@ namespace WebStoreGusev.Domain.Entities
         /// Цена продукта.
         /// </summary>
         public decimal Price { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
+
+        [ForeignKey("BrandId")]
+        public virtual Brand Brand { get; set; }
     }
 }

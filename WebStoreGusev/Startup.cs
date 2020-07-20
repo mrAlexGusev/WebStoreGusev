@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebStoreGusev.DAL;
 using WebStoreGusev.Infrastructure;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Infrastructure.Services;
@@ -30,7 +28,14 @@ namespace WebStoreGusev
             services.AddMvc();
 
             #endregion
-            
+
+            #region Подключение EntityFramework к проекту
+
+            services.AddDbContext<WebStoreContext>(options => options
+                .UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            #endregion
+
             #region Подключение action-фильтра ко всем контроллерам
 
             //services.AddMvc(options =>
