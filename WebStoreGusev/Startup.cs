@@ -53,7 +53,8 @@ namespace WebStoreGusev
 
             // время жизни сервиса - время работы приложения 
             services.AddSingleton<IEmployeesServices, InMemoryEmployeeService>();
-            services.AddSingleton<IProductService, InMemoryProductService>();
+            //services.AddSingleton<IProductService, InMemoryProductService>();
+            services.AddScoped<IProductService, SqlProductService>();
             // время жизни сервиса - время одного запроса
             //services.AddScoped<IEmployeesServices, InMemoryEmployeeService>();
 

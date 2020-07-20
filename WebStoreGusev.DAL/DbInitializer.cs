@@ -235,9 +235,9 @@ namespace WebStoreGusev.DAL
                     context.Categories.Add(item);
                 }
 
-                context.Database.ExecuteSqlCommand("SET_IDENTITY_INSERT [dbo].[Categories] ON");
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Categories] ON");
                 context.SaveChanges();
-                context.Database.ExecuteSqlCommand("SET_IDENTITY_INSERT [dbo].[Categories] OFF");
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Categories] OFF");
                 trans.Commit();
             }
 
@@ -292,9 +292,9 @@ namespace WebStoreGusev.DAL
                     context.Brands.Add(item);
                 }
 
-                context.Database.ExecuteSqlCommand("SET_IDENTITY_INSERT [dbo].[Brands] ON");
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Brands] ON");
                 context.SaveChanges();
-                context.Database.ExecuteSqlCommand("SET_IDENTITY_INSERT [dbo].[Brands] OFF");
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Brands] OFF");
                 trans.Commit();
             }
 
@@ -428,9 +428,9 @@ namespace WebStoreGusev.DAL
                     context.Products.Add(item);
                 }
 
-                context.Database.ExecuteSqlCommand("SET_IDENTITY_INSERT [dbo].[Products] ON");
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Products] ON");
                 context.SaveChanges();
-                context.Database.ExecuteSqlCommand("SET_IDENTITY_INSERT [dbo].[Products] OFF");
+                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[Products] OFF");
                 trans.Commit();
             }
         }
