@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using WebStoreGusev.DAL;
+using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Infrastructure.Services;
@@ -33,6 +36,45 @@ namespace WebStoreGusev
 
             services.AddDbContext<WebStoreContext>(options => options
                 .UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            #endregion
+
+            #region Подключение Identity
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<WebStoreContext>()
+                .AddDefaultTokenProviders();
+
+            // необязательно
+            services.Configure<IdentityOptions>(options =>
+            {
+                // password settings
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+
+                // lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                options.Lockout.AllowedForNewUsers = true;
+
+                // user settings
+                options.User.RequireUniqueEmail = true;
+            });
+
+            // необязательно
+            //services.ConfigureApplicationCookie(options =>
+            //{
+            //    // cookie settings
+            //    options.Cookie.HttpOnly = true;
+            //    options.Cookie.Expiration = TimeSpan.FromDays(150);
+            //    options.LoginPath = "/Account/Login";
+            //    options.LogoutPath = "/Account/Logout";
+            //    options.AccessDeniedPath = "/Account/AccessDenied";
+            //    options.SlidingExpiration = true;
+            //});
 
             #endregion
 
@@ -71,6 +113,11 @@ namespace WebStoreGusev
 
             // исползование статических файлов
             app.UseStaticFiles();
+
+            // использование аутентификации
+            app.UseAuthentication();
+            // использование авторизации
+            app.UseAuthorization();
 
             // Метод Map позволяет перехватывать запрос по адресу
             app.Map("/index", CustomIndexHandler);

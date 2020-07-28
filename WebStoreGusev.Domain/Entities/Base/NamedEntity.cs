@@ -2,10 +2,8 @@
 
 namespace WebStoreGusev.Domain.Entities.Base
 {
-    public abstract class NamedEntity : INamedEntity
+    public abstract class NamedEntity : BaseEntity, INamedEntity
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
     }
 }
