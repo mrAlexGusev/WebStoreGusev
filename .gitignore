@@ -340,3 +340,6 @@ ASALocalRun/
 healthchecksdb
 /WebStoreGusev/Comments/Comments.txt
 /WebStoreGusev/Hidden
+/WebStoreGusev/wwwroot/css/site.min.css
+/WebStoreGusev/wwwroot/js/site.min.js
+/WebStoreGusev/wwwroot/js/site.min.js.map
