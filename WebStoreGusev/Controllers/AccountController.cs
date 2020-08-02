@@ -80,6 +80,8 @@ namespace WebStoreGusev.Controllers
             }
 
             await signInManager.SignInAsync(user, false);
+            // добавление пользователя к группе Users
+            await userManager.AddToRoleAsync(user, "Users");
             return RedirectToAction("Index", "Home");
         }
     }

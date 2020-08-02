@@ -23,6 +23,7 @@ namespace WebStoreGusev
                 {
                     WebStoreContext context = services.GetRequiredService<WebStoreContext>();
                     DbInitializer.Initialize(context);
+                    DbInitializer.InitializeUsers(services);
                 }
                 catch (Exception ex)
                 {

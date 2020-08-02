@@ -114,6 +114,8 @@ namespace WebStoreGusev
             // исползование статических файлов
             app.UseStaticFiles();
 
+            app.UseRouting();
+
             // использование аутентификации
             app.UseAuthentication();
             // использование авторизации
@@ -127,8 +129,6 @@ namespace WebStoreGusev
             // Метод Use может как прекращать, так и продолжать обработку
             // конвейера запросов
             UseSample(app);
-
-            app.UseRouting();
 
             #region Работа с файлом конфигурации
 

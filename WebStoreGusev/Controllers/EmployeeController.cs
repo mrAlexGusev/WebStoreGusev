@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Models;
 
@@ -8,6 +9,7 @@ namespace WebStoreGusev.Controllers
     /// Тестовый контроллер. Работа с сотрудниками.
     /// </summary>
     [Route("users")]
+    [Authorize]
     public class EmployeeController : Controller
     {        
         private readonly IEmployeesServices employeesServices;
@@ -19,6 +21,7 @@ namespace WebStoreGusev.Controllers
 
         // /users/all
         [Route("all")]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             //return Content("Hello from home controller");
@@ -32,6 +35,7 @@ namespace WebStoreGusev.Controllers
         /// <param name="id"> ID сотрудника. </param>
         /// <returns></returns>
         [Route("{id}")]
+        [Authorize(Roles = "Admins, Users")]
         public IActionResult Details(int id)
         {
             var employee = employeesServices.GetById(id);
@@ -49,6 +53,7 @@ namespace WebStoreGusev.Controllers
         // /users/edit/{id}
         [Route("edit/{id?}")]
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public IActionResult Edit(int? id)
         {
             if (!id.HasValue) return View(new EmployeeViewModel());
@@ -67,6 +72,7 @@ namespace WebStoreGusev.Controllers
         // /users/edit/{id}
         [Route("edit/{id?}")]
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public IActionResult Edit(EmployeeViewModel model)
         {
             #region Реализация собственной валидации
@@ -116,6 +122,7 @@ namespace WebStoreGusev.Controllers
         /// <returns></returns>
         // /users/delete/{id}
         [Route("delete/{id}")]
+        [Authorize(Roles = "Admins")]
         public IActionResult Delete(int id)
         {
             employeesServices.Delete(id);
