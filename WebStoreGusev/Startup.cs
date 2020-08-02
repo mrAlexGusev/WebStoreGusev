@@ -99,6 +99,10 @@ namespace WebStoreGusev
             services.AddScoped<IProductService, SqlProductService>();
             // время жизни сервиса - время одного запроса
             //services.AddScoped<IEmployeesServices, InMemoryEmployeeService>();
+            
+            // подключение куков
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ICartService, CookieCartService>();
 
             #endregion
         }

@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace WebStoreGusev.Domain
 {
     /// <summary>
@@ -15,5 +17,10 @@ namespace WebStoreGusev.Domain
         /// Бренд протукта (если имеется).
         /// </summary>
         public int? BrandId { get; set; }
+
+        /// <summary>
+        /// Список Id.
+        /// </summary>
+        public List<int> Ids { get; set; }
     }
 }
