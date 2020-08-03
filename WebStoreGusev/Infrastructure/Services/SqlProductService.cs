@@ -26,6 +26,11 @@ namespace WebStoreGusev.Infrastructure.Services
             return context.Categories.ToList();
         }
 
+        public Product GetProductById(int id)
+        {
+            return context.Products.FirstOrDefault(x => x.Id.Equals(id));
+        }
+
         public IEnumerable<Product> GetProducts(ProductFilter filter)
         {
             var query = context.Products.AsQueryable();

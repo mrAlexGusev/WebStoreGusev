@@ -15,10 +15,10 @@ namespace WebStoreGusev.Controllers
             this.productService = productService;
         }
 
-        public IActionResult ProductDetails()
-        {
-            return View();
-        }
+        //public IActionResult ProductDetails()
+        //{
+        //    return View();
+        //}
 
         public IActionResult Shop(int? categoryId, int? brandId)
         {
@@ -38,6 +38,25 @@ namespace WebStoreGusev.Controllers
                     Price = p.Price
                 }).OrderBy(p => p.Order)
                     .ToList()
+            };
+
+            return View(model);
+        }
+
+        public IActionResult ProductDetails(int id)
+        {
+            var product = productService.GetProductById(id);
+
+            if (ReferenceEquals(product, null)) return RedirectToAction("NotFound", "Home");
+
+            var model = new ProductViewModel()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Order = product.Order,
+                ImageUrl = product.ImageUrl,
+                Brand = product.Brand != null ? product.Brand.Name : string.Empty
             };
 
             return View(model);

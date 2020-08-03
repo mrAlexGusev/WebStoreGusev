@@ -35,7 +35,6 @@ namespace WebStoreGusev.Controllers
         /// <param name="id"> ID сотрудника. </param>
         /// <returns></returns>
         [Route("{id}")]
-        [Authorize(Roles = "Admins, Users")]
         public IActionResult Details(int id)
         {
             var employee = employeesServices.GetById(id);

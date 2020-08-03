@@ -405,6 +405,11 @@ namespace WebStoreGusev.Infrastructure.Services
             return categories;
         }
 
+        public Product GetProductById(int id)
+        {
+            return products.FirstOrDefault(x => x.Id.Equals(id));
+        }
+
         public IEnumerable<Product> GetProducts(ProductFilter filter)
         {
             var productsFilter = products;

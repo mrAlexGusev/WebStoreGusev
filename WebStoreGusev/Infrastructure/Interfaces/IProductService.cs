@@ -27,5 +27,7 @@ namespace WebStoreGusev.Infrastructure.Interfaces
         /// <param name="filter"> Фильтр товаров. </param>
         /// <returns></returns>
         IEnumerable<Product> GetProducts(ProductFilter filter);
+
+        Product GetProductById(int id);
     }
 }

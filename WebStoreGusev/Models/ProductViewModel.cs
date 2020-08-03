@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebStoreGusev.Domain.Entities.Base.Interfaces;
+﻿using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
 namespace WebStoreGusev.Models
 {
@@ -11,8 +7,20 @@ namespace WebStoreGusev.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Order { get; set; }
+
+        /// <summary>
+        /// Url картинки товара.
+        /// </summary>
         public string ImageUrl { get; set; }
+
+        /// <summary>
+        /// Цена товара.
+        /// </summary>
         public decimal Price { get; set; }
+
+        /// <summary>
+        /// Бренд товара.
+        /// </summary>
         public string Brand { get; internal set; }
     }
 }
