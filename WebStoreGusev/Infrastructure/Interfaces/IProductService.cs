@@ -28,6 +28,11 @@ namespace WebStoreGusev.Infrastructure.Interfaces
         /// <returns></returns>
         IEnumerable<Product> GetProducts(ProductFilter filter);
 
+        /// <summary>
+        /// Получение товара по id.
+        /// </summary>
+        /// <param name="id"> ID </param>
+        /// <returns></returns>
         Product GetProductById(int id);
     }
 }

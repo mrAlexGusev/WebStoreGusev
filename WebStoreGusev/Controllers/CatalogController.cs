@@ -35,7 +35,8 @@ namespace WebStoreGusev.Controllers
                     Name = p.Name,
                     Order = p.Order,
                     ImageUrl = p.ImageUrl,
-                    Price = p.Price
+                    Price = p.Price,
+                    Brand = p.Brand?.Name ?? string.Empty
                 }).OrderBy(p => p.Order)
                     .ToList()
             };

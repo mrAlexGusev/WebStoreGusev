@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using WebStoreGusev.DAL;
 using WebStoreGusev.Domain;
@@ -28,12 +29,21 @@ namespace WebStoreGusev.Infrastructure.Services
 
         public Product GetProductById(int id)
         {
-            return context.Products.FirstOrDefault(x => x.Id.Equals(id));
+            //return context.Products.FirstOrDefault(x => x.Id.Equals(id));
+
+            // Жадная загрузка (Eager Load).
+            return context.Products
+                .Include(x => x.Category)
+                .Include(x => x.Brand)
+                .FirstOrDefault(x => x.Id.Equals(id));
         }
 
         public IEnumerable<Product> GetProducts(ProductFilter filter)
         {
-            var query = context.Products.AsQueryable();
+            var query = context.Products
+                .Include(x => x.Category)
+                .Include(x => x.Brand)
+                .AsQueryable();
 
             if (filter.BrandId.HasValue)
                 query = query.Where(c => c.BrandId.HasValue && c.BrandId.Value.Equals(filter.BrandId.Value));
