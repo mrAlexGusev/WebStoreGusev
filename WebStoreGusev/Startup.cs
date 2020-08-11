@@ -155,6 +155,11 @@ namespace WebStoreGusev
 
             app.UseEndpoints(endpoints =>
             {
+                // шаблон пути для Admin Area
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 // шаблон пути MVC
                 endpoints.MapControllerRoute(
                     name: "default",
