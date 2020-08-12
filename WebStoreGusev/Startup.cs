@@ -97,9 +97,10 @@ namespace WebStoreGusev
             services.AddSingleton<IEmployeesServices, InMemoryEmployeeService>();
             //services.AddSingleton<IProductService, InMemoryProductService>();
             services.AddScoped<IProductService, SqlProductService>();
+            services.AddScoped<IOrdersService, SqlOrdersService>();
             // время жизни сервиса - время одного запроса
             //services.AddScoped<IEmployeesServices, InMemoryEmployeeService>();
-            
+
             // подключение куков
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<ICartService, CookieCartService>();
