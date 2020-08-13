@@ -62,7 +62,7 @@ namespace WebStoreGusev.Controllers
             var detailsModel = new OrderDetailsViewModel()
             {
                 CartViewModel = cartService.TransformCart(),
-                OrderViewModel = new OrderViewModel()
+                OrderViewModel = model
             };
 
             return View("Details", detailsModel);
