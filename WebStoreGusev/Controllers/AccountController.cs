@@ -20,17 +20,49 @@ namespace WebStoreGusev.Controllers
             this.signInManager = signInManager;
         }
 
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View(new LoginViewModel());
-        }
+        #region Регистрация пользователя в системе
 
         [HttpGet]
         public IActionResult Register()
         {
             return View(new RegisterUserViewModel());
         }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterUserViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = new User { UserName = model.UserName, Email = model.Email };
+            var createResult = await userManager.CreateAsync(user, model.Password);
+
+            if (!createResult.Succeeded)
+            {
+                // выводим ошибки
+                foreach (var identityError in createResult.Errors)
+                {
+                    ModelState.AddModelError("", identityError.Description);
+                    return View(model);
+                }
+            }
+
+            await signInManager.SignInAsync(user, false);
+            // добавление пользователя к группе Users
+            await userManager.AddToRoleAsync(user, "Users");
+            return RedirectToAction("Index", "Home");
+        }
+
+        #endregion
+
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View(new LoginViewModel());
+        }
+
+        
 
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
@@ -60,29 +92,6 @@ namespace WebStoreGusev.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterUserViewModel model)
-        {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            var user = new User { UserName = model.UserName, Email = model.Email };
-            var createResult = await userManager.CreateAsync(user, model.Password);
-
-            if (!createResult.Succeeded)
-            {
-                // выводим ошибки
-                foreach(var identityError in createResult.Errors)
-                {
-                    ModelState.AddModelError("", identityError.Description);
-                    return View(model);
-                }
-            }
-
-            await signInManager.SignInAsync(user, false);
-            // добавление пользователя к группе Users
-            await userManager.AddToRoleAsync(user, "Users");
-            return RedirectToAction("Index", "Home");
-        }
+        
     }
 }

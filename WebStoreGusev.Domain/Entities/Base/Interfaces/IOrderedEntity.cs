@@ -1,13 +1,12 @@
-﻿
-namespace WebStoreGusev.Domain.Entities.Base.Interfaces
+﻿namespace WebStoreGusev.Domain.Entities.Base.Interfaces
 {
     /// <summary>
-    /// Сущность с Порядком.
+    /// Упорядочиваемая сущность.
     /// </summary>
-    public interface IOrderedEntity
+    public interface IOrderedEntity : IBaseEntity
     {
         /// <summary>
-        /// Порядок. 
+        /// Порядковый номер. 
         /// </summary>
         int Order { get; set; }
     }

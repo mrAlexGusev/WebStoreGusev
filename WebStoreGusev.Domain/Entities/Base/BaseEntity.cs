@@ -4,6 +4,9 @@ using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
 namespace WebStoreGusev.Domain.Entities.Base
 {
+    /// <summary>
+    /// Базовая сущность.
+    /// </summary>
     public class BaseEntity : IBaseEntity
     {
         [Key]

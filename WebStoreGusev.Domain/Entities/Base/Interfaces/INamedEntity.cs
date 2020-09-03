@@ -1,13 +1,12 @@
-﻿
-namespace WebStoreGusev.Domain.Entities.Base.Interfaces
+﻿namespace WebStoreGusev.Domain.Entities.Base.Interfaces
 {
     /// <summary>
-    /// Сущность с Наименованием.
+    /// Именованная сущность.
     /// </summary>
     public interface INamedEntity : IBaseEntity
     {
         /// <summary>
-        /// Наименование.
+        /// Название.
         /// </summary>
         string Name { get; set; }
     }

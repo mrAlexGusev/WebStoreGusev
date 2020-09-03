@@ -1,5 +1,4 @@
-﻿
-namespace WebStoreGusev.Domain.Entities.Base.Interfaces
+﻿namespace WebStoreGusev.Domain.Entities.Base.Interfaces
 {
     /// <summary>
     /// Базовая сущность с ID.

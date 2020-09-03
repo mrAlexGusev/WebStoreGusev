@@ -84,7 +84,7 @@
             <h3>Оформите заказ</h3>
         </div>
 
-        @Html.PartialAsync("_OrderPartial", Model.OrderViewModel,
+        @Html.Partial("_OrderPartial", Model.OrderViewModel,
             new ViewDataDictionary(ViewData) { { "sumCart", sumCart } })
                 
     </div>
