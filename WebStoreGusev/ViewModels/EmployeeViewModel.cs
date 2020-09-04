@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebStoreGusev.Models
+namespace WebStoreGusev.ViewModels
 {
     /// <summary>
     /// Модель представления информации о сотруднике.
@@ -10,6 +11,7 @@ namespace WebStoreGusev.Models
         /// <summary>
         /// ID.
         /// </summary>
+        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
         /// <summary>
@@ -38,6 +40,7 @@ namespace WebStoreGusev.Models
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "Поле Возраст является обязательным")]
         [Display(Name = "Возраст")]
+        [Range(18, 75, ErrorMessage = "Возраст в интервале от 18 до 75")]
         public int Age { get; set; }
 
         /// <summary>

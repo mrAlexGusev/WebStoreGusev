@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
-namespace WebStoreGusev.Models
+namespace WebStoreGusev.ViewModels
 {
     /// <summary>
     /// Модель представления каталога товаров.

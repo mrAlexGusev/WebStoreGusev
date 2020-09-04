@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using WebStoreGusev.ViewModels.Orders;
 
-namespace WebStoreGusev.Models
+namespace WebStoreGusev.ViewModels
 {
     public class OrderDetailsViewModel
     {

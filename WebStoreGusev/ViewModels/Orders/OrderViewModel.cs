@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebStoreGusev.Models
+namespace WebStoreGusev.ViewModels.Orders
 {
     public class OrderViewModel
     {

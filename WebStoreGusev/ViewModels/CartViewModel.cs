@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace WebStoreGusev.Models
+namespace WebStoreGusev.ViewModels
 {
     public class CartViewModel
     {

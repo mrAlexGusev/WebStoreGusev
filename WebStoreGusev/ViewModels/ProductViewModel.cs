@@ -1,6 +1,6 @@
 ﻿using WebStoreGusev.Domain.Entities.Base.Interfaces;
 
-namespace WebStoreGusev.Models
+namespace WebStoreGusev.ViewModels
 {
     public class ProductViewModel : INamedEntity, IOrderedEntity
     {

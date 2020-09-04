@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace WebStoreGusev.Models
+﻿namespace WebStoreGusev.Models
 {
     public class CartItem
     {
