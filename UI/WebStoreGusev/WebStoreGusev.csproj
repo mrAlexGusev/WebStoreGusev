@@ -23,6 +23,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Common\WebStoreGusev.Domain\WebStoreGusev.Domain.csproj" />
     <ProjectReference Include="..\..\Services\WebStoreGusev.DAL\WebStoreGusev.DAL.csproj" />
+    <ProjectReference Include="..\..\Services\WebStoreGusev.Interfaces\WebStoreGusev.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Services\WebStoreGusev.Services\WebStoreGusev.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

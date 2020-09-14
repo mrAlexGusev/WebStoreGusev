@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebStoreGusev.DAL\WebStoreGusev.DAL.csproj" />
+    <ProjectReference Include="..\WebStoreGusev.Interfaces\WebStoreGusev.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

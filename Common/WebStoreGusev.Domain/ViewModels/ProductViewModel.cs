@@ -21,6 +21,6 @@ namespace WebStoreGusev.ViewModels
         /// <summary>
         /// Бренд товара.
         /// </summary>
-        public string Brand { get; internal set; }
+        public string Brand { get; set; }
     }
 }

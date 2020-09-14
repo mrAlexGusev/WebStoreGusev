@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStoreGusev.DAL", "Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStoreGusev", "UI\WebStoreGusev\WebStoreGusev.csproj", "{D23488D0-95DD-418E-9EB3-79E545987F3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStoreGusev.ServiceHosting", "Services\WebStoreGusev.ServiceHosting\WebStoreGusev.ServiceHosting.csproj", "{9E4440A9-3C6D-48CC-BD51-933DB1846059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStoreGusev.ServiceHosting", "Services\WebStoreGusev.ServiceHosting\WebStoreGusev.ServiceHosting.csproj", "{9E4440A9-3C6D-48CC-BD51-933DB1846059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStoreGusev.Interfaces", "Services\WebStoreGusev.Interfaces\WebStoreGusev.Interfaces.csproj", "{FC616940-8BD5-475B-A8AB-D57D8C7342FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStoreGusev.Interfaces", "Services\WebStoreGusev.Interfaces\WebStoreGusev.Interfaces.csproj", "{FC616940-8BD5-475B-A8AB-D57D8C7342FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStoreGusev.Services", "Services\WebStoreGusev.Services\WebStoreGusev.Services.csproj", "{9F7258CE-7E8F-45D6-AAFA-0D27F15E60CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStoreGusev.Services", "Services\WebStoreGusev.Services\WebStoreGusev.Services.csproj", "{9F7258CE-7E8F-45D6-AAFA-0D27F15E60CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
