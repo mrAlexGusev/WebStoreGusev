@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebStoreGusev.Domain;
+using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
 
 namespace WebStoreGusev.Areas.Admin.Controllers

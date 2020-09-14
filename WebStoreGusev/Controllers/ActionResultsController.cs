@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
-using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Controllers
 {

@@ -7,23 +7,12 @@
     <meta name="author" content="">
     <title>@ViewData["Title"]</title>
 
-    <environment exclude="Development">
-        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true">
-    </environment>
-
-    <environment include="Development">
-        <link href="~/css/prettyPhoto.css" rel="stylesheet">
-        <link href="~/css/price-range.css" rel="stylesheet">
-        <link href="~/css/animate.css" rel="stylesheet">
-        <link href="~/css/responsive.css" rel="stylesheet">
-    </environment>
-
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/css/font-awesome.min.css" rel="stylesheet">
-    <link href="~/css/main.css" rel="stylesheet">
+    @*@await Html.PartialAsync("_Partial/_Styles")*@
+    <partial name="_Partial/_Styles" />
     
     <!-- Секция для отображения кастомных стилей, если понадобятся -->
     @RenderSection("styles", false)
+
     <!--[if lt IE 9]>
     <script src="~/js/html5shiv.js"></script>
     <script src="~/js/respond.min.js"></script>
@@ -45,20 +34,9 @@
 
     @await Html.PartialAsync("_Footer")
 
-    <environment exclude="Development">
-        <link href="~/js/site.min.js" rel="stylesheet" asp-append-version="true">
-    </environment>
+    @*@await Html.PartialAsync("_Partial/_Scripts")*@
+    <partial name="_Partial/_Scripts" />
 
-    <environment include="Development">
-        <script src="~/js/price-range.js"></script>
-        <script src="~/js/jquery.prettyPhoto.js"></script>
-        <script src="~/js/main.js"></script>
-    </environment>
-
-    <script src="~/js/jquery.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/jquery.scrollUp.min.js"></script>
-    
     <!-- Секция для отображения кастомных скриптов, если понадобятся -->
     @RenderSection("scripts", false)
 </body>

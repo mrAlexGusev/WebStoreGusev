@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using WebStoreGusev.Domain.Entities;
+using WebStoreGusev.Domain.Entities.Identity;
 
 namespace WebStoreGusev.DAL
 {

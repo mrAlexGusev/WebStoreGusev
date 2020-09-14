@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using WebStoreGusev.DAL;
-using WebStoreGusev.Domain;
 using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
 
-namespace WebStoreGusev.Infrastructure.Services
+namespace WebStoreGusev.Infrastructure.Services.InSQL
 {
     public class SqlProductService : IProductService
     {

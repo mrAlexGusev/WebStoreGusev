@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
+using WebStoreGusev.ViewModels.Orders;
 
 namespace WebStoreGusev.Controllers
 {

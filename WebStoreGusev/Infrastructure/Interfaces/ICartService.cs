@@ -1,4 +1,4 @@
-﻿using WebStoreGusev.Models;
+﻿using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Infrastructure.Interfaces
 {

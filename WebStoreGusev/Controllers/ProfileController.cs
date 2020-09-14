@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels.Orders;
 
 namespace WebStoreGusev.Controllers
 {
@@ -15,11 +15,8 @@ namespace WebStoreGusev.Controllers
             this.ordersService = ordersService;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        public IActionResult Index() => View();
+       
         public IActionResult Orders()
         {
             var orders = ordersService.GetUserOrders(User.Identity.Name);

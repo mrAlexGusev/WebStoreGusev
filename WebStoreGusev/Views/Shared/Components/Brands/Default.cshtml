@@ -9,8 +9,7 @@
             {
                 <li>
                     <a asp-controller="Catalog" asp-action="Shop" asp-route-brandId="@brand.Id"> 
-                        <span class="pull-right">(@brand.ProductsCount)</span>
-                    @brand.Name</a>
+                        <span class="pull-right">(@brand.ProductsCount)</span>@brand.Name</a>
                 </li>
             }
         </ul>

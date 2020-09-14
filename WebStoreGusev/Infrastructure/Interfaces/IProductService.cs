@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using WebStoreGusev.Domain;
 using WebStoreGusev.Domain.Entities;
 
 namespace WebStoreGusev.Infrastructure.Interfaces

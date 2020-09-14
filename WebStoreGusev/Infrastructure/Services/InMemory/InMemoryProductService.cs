@@ -4,7 +4,7 @@ using WebStoreGusev.Domain;
 using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
 
-namespace WebStoreGusev.Infrastructure.Services
+namespace WebStoreGusev.Infrastructure.Services.InMemory
 {
     public class InMemoryProductService : IProductService
     {

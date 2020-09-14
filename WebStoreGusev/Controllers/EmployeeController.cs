@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.Models;
 using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Controllers

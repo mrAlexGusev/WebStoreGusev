@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebStoreGusev.Domain.Entities;
+using WebStoreGusev.Domain.Entities.Identity;
+using WebStoreGusev.Domain.Entities.Orders;
 
 namespace WebStoreGusev.DAL
 {

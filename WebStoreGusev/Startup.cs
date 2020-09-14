@@ -8,10 +8,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using WebStoreGusev.DAL;
-using WebStoreGusev.Domain.Entities;
+using WebStoreGusev.Domain.Entities.Identity;
 using WebStoreGusev.Infrastructure;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Infrastructure.Services;
+using WebStoreGusev.Infrastructure.Services.InCookies;
+using WebStoreGusev.Infrastructure.Services.InMemory;
+using WebStoreGusev.Infrastructure.Services.InSQL;
 
 namespace WebStoreGusev
 {

@@ -3,13 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WebStoreGusev.DAL;
-using WebStoreGusev.Domain.Entities;
+using WebStoreGusev.Domain.Entities.Identity;
+using WebStoreGusev.Domain.Entities.Orders;
 using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
+using WebStoreGusev.ViewModels.Orders;
 
-namespace WebStoreGusev.Infrastructure.Services
+namespace WebStoreGusev.Infrastructure.Services.InSQL
 {
     public class SqlOrdersService : IOrdersService
     {

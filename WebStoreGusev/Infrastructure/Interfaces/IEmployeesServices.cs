@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Infrastructure.Interfaces
 {

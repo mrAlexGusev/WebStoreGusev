@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
 
-namespace WebStoreGusev.Infrastructure.Services
+namespace WebStoreGusev.Infrastructure.Services.InMemory
 {
     public class InMemoryEmployeeService : IEmployeesServices
     {

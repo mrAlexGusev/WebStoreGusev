@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using WebStoreGusev.Domain;
+using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Controllers
 {

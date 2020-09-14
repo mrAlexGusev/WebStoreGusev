@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebStoreGusev.Domain.Entities;
-using WebStoreGusev.Models;
+﻿using System.Collections.Generic;
+using WebStoreGusev.Domain.Entities.Orders;
+using WebStoreGusev.ViewModels;
+using WebStoreGusev.ViewModels.Orders;
 
 namespace WebStoreGusev.Infrastructure.Interfaces
 {

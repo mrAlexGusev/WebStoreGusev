@@ -3,12 +3,12 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using WebStoreGusev.Domain;
+using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Models;
+using WebStoreGusev.ViewModels;
 
-namespace WebStoreGusev.Infrastructure.Services
+namespace WebStoreGusev.Infrastructure.Services.InCookies
 {
     public class CookieCartService : ICartService
     {

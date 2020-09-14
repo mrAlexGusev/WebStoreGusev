@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WebStoreGusev.Domain.Entities;
-using WebStoreGusev.Models;
+using WebStoreGusev.Domain.Entities.Identity;
+using WebStoreGusev.ViewModels.Identity;
 
 namespace WebStoreGusev.Controllers
 {
