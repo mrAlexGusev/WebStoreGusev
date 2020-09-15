@@ -16,3 +16,5 @@
 На проект клаент
 Microsoft.AspNet.WebApi.Client
 Microsoft.Extensions.Configuration.Abstractions
+
+В проект интерфейсов добавляем папку апи
