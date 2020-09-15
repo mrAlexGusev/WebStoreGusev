@@ -339,9 +339,9 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /WebStoreGusev/Comments/Comments.txt
-/WebStoreGusev/Hidden
+/UI/WebStoreGusev/Hidden
 /WebStoreGusev/wwwroot/css/site.min.css
 /WebStoreGusev/wwwroot/js/site.min.js
 /WebStoreGusev/wwwroot/js/site.min.js.map
-/UI/WebStoreGusev/Comments_2.txt
-/UI/WebStoreGusev/Comments.txt
+/UI/WebStoreGusev/Hidden/Comments_2.txt
+/UI/WebStoreGusev/Hidden/Comments.txt

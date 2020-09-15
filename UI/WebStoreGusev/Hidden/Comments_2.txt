@@ -10,3 +10,9 @@
 
 
 В свойствах решения установить запуск двух приложений.
+
+1-57-13
+Добавляем библиотеки
+На проект клаент
+Microsoft.AspNet.WebApi.Client
+Microsoft.Extensions.Configuration.Abstractions
