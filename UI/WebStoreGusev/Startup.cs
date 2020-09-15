@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using WebStoreGusev.Clients.Values;
 using WebStoreGusev.DAL;
 using WebStoreGusev.Domain.Entities.Identity;
 using WebStoreGusev.Infrastructure;
@@ -15,6 +16,7 @@ using WebStoreGusev.Infrastructure.Services;
 using WebStoreGusev.Infrastructure.Services.InCookies;
 using WebStoreGusev.Infrastructure.Services.InMemory;
 using WebStoreGusev.Infrastructure.Services.InSQL;
+using WebStoreGusev.Interfaces.Api;
 
 namespace WebStoreGusev
 {
@@ -107,6 +109,12 @@ namespace WebStoreGusev
             // подключение куков
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<ICartService, CookieCartService>();
+
+            #endregion
+
+            #region Регестрация тестового сервиса WebAPI
+
+            services.AddScoped<IValueServices, ValuesClient>();
 
             #endregion
         }
