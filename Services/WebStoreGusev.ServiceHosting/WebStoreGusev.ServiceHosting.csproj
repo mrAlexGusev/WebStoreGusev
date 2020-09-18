@@ -4,5 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebStoreGusev.Clients\WebStoreGusev.Clients.csproj" />
+    <ProjectReference Include="..\WebStoreGusev.DAL\WebStoreGusev.DAL.csproj" />
+    <ProjectReference Include="..\WebStoreGusev.Interfaces\WebStoreGusev.Interfaces.csproj" />
+    <ProjectReference Include="..\WebStoreGusev.Services\WebStoreGusev.Services.csproj" />
+  </ItemGroup>
+
 
 </Project>
