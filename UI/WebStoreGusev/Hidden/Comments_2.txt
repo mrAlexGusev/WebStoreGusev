@@ -70,3 +70,5 @@ Microsoft.Extensions.Configuration.Abstractions
 [NonAction] этот метод нельзы никак вызвать
 
 Доработаем базового клиента
+Реализуем клиент рабочего.
+

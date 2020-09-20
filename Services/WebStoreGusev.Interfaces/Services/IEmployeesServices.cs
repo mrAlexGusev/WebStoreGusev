@@ -33,7 +33,7 @@ namespace WebStoreGusev.Infrastructure.Interfaces
         /// Удалить сотрудника.
         /// </summary>
         /// <param name="id"></param>
-        void Delete(int id);
+        bool Delete(int id);
 
         /// <summary>
         /// Изменить данные сотрудника.
