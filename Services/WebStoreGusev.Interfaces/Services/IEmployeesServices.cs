@@ -21,18 +21,25 @@ namespace WebStoreGusev.Infrastructure.Interfaces
         /// <summary>
         /// Сохранить изменения.
         /// </summary>
-        void Commit();
+        void SaveChanges();
 
         /// <summary>
         /// Добавить нового сотрудника.
         /// </summary>
         /// <param name="model"></param>
-        void AddNew(EmployeeViewModel model);
+        void Add(EmployeeViewModel model);
 
         /// <summary>
         /// Удалить сотрудника.
         /// </summary>
         /// <param name="id"></param>
         void Delete(int id);
+
+        /// <summary>
+        /// Изменить данные сотрудника.
+        /// </summary>
+        /// <param name="id">Идентификатор</param>
+        /// <param name="model"></param>
+        void Edit(int id, EmployeeViewModel model);
     }
 }

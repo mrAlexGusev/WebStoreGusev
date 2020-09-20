@@ -5,13 +5,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using WebStoreGusev.Clients.Base;
+using WebStoreGusev.Domain;
 using WebStoreGusev.Interfaces.Api;
 
 namespace WebStoreGusev.Clients.Values
 {
     public class ValuesClient : BaseClient, IValueServices
     {
-        public ValuesClient(IConfiguration configuration) : base(configuration, "api/values")
+        public ValuesClient(IConfiguration configuration) : base(configuration, WebAPI.Values)
         {
 
         }

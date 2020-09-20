@@ -105,11 +105,11 @@ namespace WebStoreGusev.Controllers
             // иначе добавляем модель в список
             else
             {
-                employeesServices.AddNew(model);
+                employeesServices.Add(model);
             }
 
             // станет актуальным после подключения БД
-            employeesServices.Commit();
+            employeesServices.SaveChanges();
 
             return RedirectToAction(nameof(Index));
         }
