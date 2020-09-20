@@ -68,3 +68,5 @@ Microsoft.Extensions.Configuration.Abstractions
 Атрибуты на методах это конечные точки.
 
 [NonAction] этот метод нельзы никак вызвать
+
+Доработаем базового клиента
