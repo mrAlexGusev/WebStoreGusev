@@ -83,3 +83,5 @@ Microsoft.Extensions.Configuration.Abstractions
 1-11-32
 
 Все порпавил. Не прошло и года
+
+Для основной модели создадим папку DTO
