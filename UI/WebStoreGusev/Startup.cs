@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using WebStoreGusev.Clients.Employees;
 using WebStoreGusev.Clients.Values;
 using WebStoreGusev.DAL;
 using WebStoreGusev.Domain.Entities.Identity;
@@ -17,6 +18,8 @@ using WebStoreGusev.Infrastructure.Services.InCookies;
 using WebStoreGusev.Infrastructure.Services.InMemory;
 using WebStoreGusev.Infrastructure.Services.InSQL;
 using WebStoreGusev.Interfaces.Api;
+using WebStoreGusev.Interfaces.Services;
+using WebStoreGusev.Services.Products.InMemory;
 
 namespace WebStoreGusev
 {
@@ -99,10 +102,15 @@ namespace WebStoreGusev
             #region Добавляем разрешение зависимости
 
             // время жизни сервиса - время работы приложения 
-            services.AddSingleton<IEmployeesServices, InMemoryEmployeeService>();
+            //services.AddSingleton<IEmployeesServices, InMemoryEmployeeService>();
             //services.AddSingleton<IProductService, InMemoryProductService>();
+
+            // Web API
+            services.AddSingleton<IEmployeesServices, EmployeesClient>();
+                        
             services.AddScoped<IProductService, SqlProductService>();
             services.AddScoped<IOrdersService, SqlOrdersService>();
+
             // время жизни сервиса - время одного запроса
             //services.AddScoped<IEmployeesServices, InMemoryEmployeeService>();
 

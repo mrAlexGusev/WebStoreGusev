@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Domain;
-using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.ViewModels;
+using WebStoreGusev.Domain.Models;
+using WebStoreGusev.Interfaces.Services;
 
 namespace WebStoreGusev.ServiceHosting.Controllers
 {
@@ -22,20 +18,20 @@ namespace WebStoreGusev.ServiceHosting.Controllers
         }
 
         [HttpPost]
-        public void Add([FromBody] EmployeeViewModel model) =>
-            services.Add(model);
+        public void Add([FromBody] Employee employee) =>
+            services.Add(employee);
 
         [HttpDelete("{id}")]
-        public void Delete(int id) => services.Delete(id);
+        public bool Delete(int id) => services.Delete(id);
         
         [HttpPut("{id}")]
-        public void Edit(int id, [FromBody] EmployeeViewModel model) => services.Edit(id, model);
+        public void Edit(int id, [FromBody] Employee employee) => services.Edit(id, employee);
 
         [HttpGet]
-        public IEnumerable<EmployeeViewModel> GetAll() => services.GetAll();
+        public IEnumerable<Employee> GetAll() => services.GetAll();
 
         [HttpGet("{id}")]
-        public EmployeeViewModel GetById(int id) => services.GetById(id);
+        public Employee GetById(int id) => services.GetById(id);
        
         [NonAction]
         public void SaveChanges() => services.SaveChanges();

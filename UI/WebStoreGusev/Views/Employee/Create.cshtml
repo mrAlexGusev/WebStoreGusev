@@ -1,13 +1,13 @@
 ﻿@model EmployeeViewModel
 
 @{ 
-    ViewData["Title"] = "Редактирование сотрудника";
+    ViewData["Title"] = "Создание сотрудника";
 }
 
 <div class="container">
     <h3>@ViewData["Title"]</h3>
     <hr />
-    <form asp-action="Edit" method="post">
+    <form asp-action="Create" method="post">
         <div class="row">
             <div class="col-md-4">
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Сохранить" class="btn btn-default" />
+                    <input type="submit" value="Создать" class="btn btn-default" />
                 </div>
             </div>
         </div>

@@ -19,6 +19,8 @@ using WebStoreGusev.Infrastructure.Services.InCookies;
 using WebStoreGusev.Infrastructure.Services.InMemory;
 using WebStoreGusev.Infrastructure.Services.InSQL;
 using WebStoreGusev.Interfaces.Api;
+using WebStoreGusev.Interfaces.Services;
+using WebStoreGusev.Services.Products.InMemory;
 
 namespace WebStoreGusev.ServiceHosting
 {

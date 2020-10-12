@@ -1,11 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using WebStoreGusev.Clients.Base;
 using WebStoreGusev.Domain;
-using WebStoreGusev.Infrastructure.Interfaces;
-using WebStoreGusev.ViewModels;
+using WebStoreGusev.Domain.Models;
+using WebStoreGusev.Interfaces.Services;
 
 namespace WebStoreGusev.Clients.Employees
 {
@@ -14,17 +12,17 @@ namespace WebStoreGusev.Clients.Employees
         public EmployeesClient(IConfiguration configuration)
             : base(configuration, WebAPI.Employees) { }
 
-        public IEnumerable<EmployeeViewModel> GetAll() =>
-            Get<List<EmployeeViewModel>>(serviceAddress);
+        public IEnumerable<Employee> GetAll() =>
+            Get<List<Employee>>(serviceAddress);
 
-        public EmployeeViewModel GetById(int id) =>
-            Get<EmployeeViewModel>($"{serviceAddress}/{id}");
+        public Employee GetById(int id) =>
+            Get<Employee>($"{serviceAddress}/{id}");
 
-        public void Add(EmployeeViewModel model) =>
-            Post(serviceAddress, model);
+        public void Add(Employee employee) =>
+            Post(serviceAddress, employee);
 
-        public void Edit(int id, EmployeeViewModel model) =>
-            Put($"{serviceAddress}/{id}", model);
+        public void Edit(int id, Employee employee) =>
+            Put($"{serviceAddress}/{id}", employee);
 
 
         public bool Delete(int id) => 

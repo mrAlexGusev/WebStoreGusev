@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebStoreGusev.ViewModels
+namespace WebStoreGusev.Domain.ViewModels
 {
     /// <summary>
     /// Модель представления информации о сотруднике.

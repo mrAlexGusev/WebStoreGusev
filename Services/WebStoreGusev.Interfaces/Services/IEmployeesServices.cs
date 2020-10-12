@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using WebStoreGusev.ViewModels;
+using WebStoreGusev.Domain.Models;
 
-namespace WebStoreGusev.Infrastructure.Interfaces
+namespace WebStoreGusev.Interfaces.Services
 {
     public interface IEmployeesServices
     {
@@ -9,37 +9,37 @@ namespace WebStoreGusev.Infrastructure.Interfaces
         /// Получение списка сотрудников.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<EmployeeViewModel> GetAll();
+        IEnumerable<Employee> GetAll();
 
         /// <summary>
-        /// Получение сотрудника по id.
+        /// Получение сотрудника по ID.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">ID сотрудника.</param>
         /// <returns></returns>
-        EmployeeViewModel GetById(int id);
+        Employee GetById(int id);
+
+        /// <summary>
+        /// Добавить нового сотрудника.
+        /// </summary>
+        /// <param name="employee">Сотрудник</param>
+        void Add(Employee employee);
+
+        /// <summary>
+        /// Изменить данные сотрудника.
+        /// </summary>
+        /// <param name="id">ID сотрудника.</param>
+        /// <param name="employee">Сотрудник.</param>
+        void Edit(int id, Employee employee);
+
+        /// <summary>
+        /// Удалить сотрудника.
+        /// </summary>
+        /// <param name="id">ID сотрудника.</param>
+        bool Delete(int id);
 
         /// <summary>
         /// Сохранить изменения.
         /// </summary>
         void SaveChanges();
-
-        /// <summary>
-        /// Добавить нового сотрудника.
-        /// </summary>
-        /// <param name="model"></param>
-        void Add(EmployeeViewModel model);
-
-        /// <summary>
-        /// Удалить сотрудника.
-        /// </summary>
-        /// <param name="id"></param>
-        bool Delete(int id);
-
-        /// <summary>
-        /// Изменить данные сотрудника.
-        /// </summary>
-        /// <param name="id">Идентификатор</param>
-        /// <param name="model"></param>
-        void Edit(int id, EmployeeViewModel model);
     }
 }
