@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using WebStoreGusev.DAL;
+using WebStoreGusev.Domain.DTO.Products;
 using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
+using WebStoreGusev.Services.Mapping;
 
 namespace WebStoreGusev.Infrastructure.Services.InSQL
 {
@@ -26,7 +28,7 @@ namespace WebStoreGusev.Infrastructure.Services.InSQL
             return context.Categories.ToList();
         }
 
-        public Product GetProductById(int id)
+        public ProductDTO GetProductById(int id)
         {
             //return context.Products.FirstOrDefault(x => x.Id.Equals(id));
 
@@ -34,10 +36,11 @@ namespace WebStoreGusev.Infrastructure.Services.InSQL
             return context.Products
                 .Include(x => x.Category)
                 .Include(x => x.Brand)
-                .FirstOrDefault(x => x.Id.Equals(id));
+                .FirstOrDefault(x => x.Id.Equals(id))
+                .ToDTO();
         }
 
-        public IEnumerable<Product> GetProducts(ProductFilter filter)
+        public IEnumerable<ProductDTO> GetProducts(ProductFilter filter)
         {
             var query = context.Products
                 .Include(x => x.Category)
@@ -50,7 +53,7 @@ namespace WebStoreGusev.Infrastructure.Services.InSQL
             if (filter.CategoryId.HasValue)
                 query = query.Where(c => c.CategoryId.Equals(filter.CategoryId.Value));
 
-            return query.ToList();
+            return query.AsEnumerable().ToDTO();
         }
     }
 }

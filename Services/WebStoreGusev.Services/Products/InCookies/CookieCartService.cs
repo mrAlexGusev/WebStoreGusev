@@ -6,6 +6,7 @@ using System.Linq;
 using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
 using WebStoreGusev.Models;
+using WebStoreGusev.Services.Mapping;
 using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Infrastructure.Services.InCookies
@@ -152,18 +153,14 @@ namespace WebStoreGusev.Infrastructure.Services.InCookies
 
         public CartViewModel TransformCart()
         {
-            var products = productService.GetProducts(new ProductFilter()
-            {
-                Ids = Cart.Items.Select(i => i.ProductId).ToList()
-            }).Select(p => new ProductViewModel()
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Order = p.Order,
-                Price = p.Price,
-                ImageUrl = p.ImageUrl,
-                Brand = p.Brand != null ? p.Brand.Name : string.Empty
-            }).ToList();
+            var products = productService
+                .GetProducts(new ProductFilter()
+                {
+                    Ids = Cart.Items.Select(i => i.ProductId).ToList()
+                })
+                .FromDTO()
+                .ToView()
+                .ToList();
 
             var r = new CartViewModel
             {

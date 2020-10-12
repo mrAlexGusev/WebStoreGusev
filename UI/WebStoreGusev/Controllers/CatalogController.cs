@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebStoreGusev.Domain.Entities;
 using WebStoreGusev.Infrastructure.Interfaces;
+using WebStoreGusev.Services.Mapping;
 using WebStoreGusev.ViewModels;
 
 namespace WebStoreGusev.Controllers
@@ -29,16 +30,10 @@ namespace WebStoreGusev.Controllers
             {
                 BrandId = brandId,
                 CategoryId = categoryId,
-                Products = products.Select(p => new ProductViewModel()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Order = p.Order,
-                    ImageUrl = p.ImageUrl,
-                    Price = p.Price,
-                    Brand = p.Brand?.Name ?? string.Empty
-                }).OrderBy(p => p.Order)
-                    .ToList()
+                Products = products
+                    .FromDTO()
+                    .Select(ProductMapping.ToView)
+                    .OrderBy(p => p.Order)
             };
 
             return View(model);
@@ -48,19 +43,9 @@ namespace WebStoreGusev.Controllers
         {
             var product = productService.GetProductById(id);
 
-            if (ReferenceEquals(product, null)) return RedirectToAction("NotFound", "Home");
+            if (product is null) { return RedirectToAction("NotFound", "Home"); }
 
-            var model = new ProductViewModel()
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Price = product.Price,
-                Order = product.Order,
-                ImageUrl = product.ImageUrl,
-                Brand = product.Brand != null ? product.Brand.Name : string.Empty
-            };
-
-            return View(model);
+            return View(product.FromDTO().ToView());
         }
     }
 }
