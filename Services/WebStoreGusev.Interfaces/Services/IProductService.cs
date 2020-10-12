@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using WebStoreGusev.Domain.Entities;
+using WebStoreGusev.Domain.DTO.Products;
 
 namespace WebStoreGusev.Infrastructure.Interfaces
 {
@@ -25,13 +26,13 @@ namespace WebStoreGusev.Infrastructure.Interfaces
         /// </summary>
         /// <param name="filter"> Фильтр товаров. </param>
         /// <returns></returns>
-        IEnumerable<Product> GetProducts(ProductFilter filter);
+        IEnumerable<ProductDTO> GetProducts(ProductFilter filter);
 
         /// <summary>
         /// Получение товара по id.
         /// </summary>
         /// <param name="id"> ID </param>
         /// <returns></returns>
-        Product GetProductById(int id);
+        ProductDTO GetProductById(int id);
     }
 }
